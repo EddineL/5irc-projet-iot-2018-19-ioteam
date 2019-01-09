@@ -31,4 +31,4 @@ Suite à cela, vous devriez être en mesure d'interagir avec le Cloud :
 - rafraichir la page d'Ubidots
 - sélectionnez son objet dans l'onglet "Device"
 - sélectionnez la variable de l'objet
-=> des données ont normalement été envoyées par votre objet et donc reçue par la variable de l'objet dans Ubidots.
+=> des données ont normalement été envoyées par votre objet et donc été reçues par la variable de l'objet dans Ubidots.
