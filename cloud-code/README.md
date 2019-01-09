@@ -4,16 +4,17 @@ Premièrement pour utiliser Ubidots, il faut se créer un compte à l'adresse su
 
 Une fois connecté à votre compte, il vous faut récupérer votre Token qui vous permettra d'interagir avec Ubidots :
 - cliquez sur l'onglet de votre profil en haut à droite => "API credentials"
-- copier et conservez votre Token qui apparait dans le menu déroulant
+- copiez et conservez votre Token qui apparait dans le menu déroulant
 
 Ensuite :
 - sélectionner le menu "Devices"
 - ajoutez un objet IoT en cliquant sur le petit "+" => blank
-- entrer le nom de votre futur objet IoT
+- entrez le nom de votre futur objet IoT
 
 Ensuite :
 - cliquez sur votre nouvel objet =>  Add variable => Raw
-- changer le nom de la nouvelle variable créée
+- changez le nom de la nouvelle variable créée
+- cliquez sur la variable => copiez et conservez son identifiant (champs "ID" dans le menu de gauche)
 
 Cette variable servira de mini base de donnée à votre objet IoT étant donné que ce dernier enverra ses donnée à destination de cette dernière dans le Cloud (Ubidots).
 
@@ -32,3 +33,18 @@ Suite à cela, vous devriez être en mesure d'interagir avec le Cloud :
 - sélectionnez son objet dans l'onglet "Device"
 - sélectionnez la variable de l'objet
 => des données ont normalement été envoyées par votre objet et donc été reçues par la variable de l'objet dans Ubidots.
+
+# Les widgets
+
+Pour effectuez des traitements sur les données récupérées, il est possible d'utiliser des widgets préfaits :
+- allez dans l'onglet Data => Dashboards
+- ajoutez des widgets pour votre dashboard en cliquant sur le "+" en haut à droite
+- sélectionnez un type de widget puis configurez le avec les données de votre objet (PLus d'informations via ce lien : https://help.ubidots.com/user-guides/create-dashboards-and-widgets)
+
+
+Il est également possible de créer vos propre widgets via des canvas HTML.
+Le code source de notre widget est disponible dans le répertoire. Ce dernier affiche les coordonées GPS récupérées par notre objet IoT sur une Google Map.
+
+Afin de récupérer toutes les valeurs d'une variable d'un objet, il faut utiliser l'url suivante avec un Token valide (voir requête ajax dans le code): https://industrial.api.ubidots.com/api/v1.6/variables/' + ID_VARIABLE + '/values
+
+Il est ensuite possible de parser toutes les données en json et ensuite de les traiter et les afficher par votre widget.
